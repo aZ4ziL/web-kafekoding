@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Web Kafekoding Login" />
+    <meta name="keywords" content="Web Kafekoding Login" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/libraries/fonts/1.ttf" />
+    <link rel="stylesheet" href="/static/libraries/style/style.css" />
+    <link rel="stylesheet" href="/static/libraries/light-slider/css/lightslider.css" />
+    <title>Pendaftaran kelas kafekoding</title>
+    <!-- page icon----------- -->
+    <link rel="shortcut icon" href="/static/libraries/images/logo.png" />
+</head>
+
+<body class="login-page">
+    <section class="section-login-page d-flex justify-content-center align-items-center">
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-12 col-md-7 img-login align-self-center">
+                    <h1 class="mb-2 mb-md-5 text-center text-md-left judul-login">
+                        Masuk dan dapatkan <br />
+                        kelasmu sekarang
+                    </h1>
+                    <div class="d-flex justify-content-center">
+                        <img class="imgl d-none d-md-block" src="/static/libraries/images/image-header.png"
+                            alt="kafekoding" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 form-login align-self-center">
+                    <div class="card login-card p-3">
+                        <div class="card-body">
+                            <div class="image-form-logo d-flex justify-content-center">
+                                <a href="homepage.html"> <img class="iamge-form-logo" width="80"
+                                        src="/static/libraries/images/logo.png" alt="Kafekoding" /></a>
+                            </div>
+
+                            {{ if .flasher.Type }}
+                            <div class='alert alert-{{ .flasher.Type }}'>
+                                {{ .flasher.Message }}
+                            </div>
+                            {{ end }}
+
+                            <form method="POST" action="">
+                                <!-- nim -->
+                                <div class="form-group">
+                                    <label class="login-label" for="nim">NIM</label>
+                                    <input class="form-control mb-3" type="text" name="student_id_number"
+                                        id="student_id_number" placeholder="Nomor Induk Mahasiswa" required />
+                                </div>
+                                <!-- Password -->
+                                <div class="form-group">
+                                    <label class="login-label" for="password">Password</label>
+                                    <div class="input-group">
+                                        <input class="form-control" type="password" id="password"
+                                            placeholder="Masukan Password" required />
+                                        <div id="button_show_hide" onclick="showHide();"></div>
+                                    </div>
+                                </div>
+                                <!-- Daftar Sebagai
+                                <div class="form-group">
+                                    <label for="m_p" class="login-label"> Login Sebagai </label>
+                                    <select name="login_type" id="login_type" class="form-control" required>
+                                        <option>-Pilih salah satu-</option>
+                                        <option value="MENTOR">Mentor</option>
+                                        <option value="MEMBER" selected>Peserta</option>
+                                    </select>
+                                </div> -->
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-form-login" value="Masuk">Masuk</button>
+                                <p class="class text-center mt-3">
+                                    <a href="#" class="lupa-daftar" href="">Saya lupa Password</a>
+                                </p>
+                                <p class="class text-center mt-1">
+                                    <a href="/user/register" class="lupa-daftar" href="">Belum mempunyai akun ?</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jquery --------->
+    <script src="/static/libraries/jquery/jquery-3.5.1.js"></script>
+    <script src="/static/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="/static/libraries/js/showPassword.js"></script>
+</body>
+
+</html>
